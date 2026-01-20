@@ -72,33 +72,7 @@ Each dashboard operates independently with its own analytics.
 
 ---
 
-## 📂 Project Structure
 
-```bash
-src/
- ├── app/
- │   ├── components/
- │   │   ├── add-transaction/
- │   │   ├── dashboard-chart/
- │   │   └── financial-analysis/
- │   ├── dashboard/
- │   │   ├── income-dashboard/
- │   │   ├── expense-dashboard/
- │   │   └── dashboard-module.ts
- │   ├── models/
- │   │   └── transaction.model.ts
- │   ├── pages/
- │   │   └── home/
- │   ├── services/
- │   │   └── finance.ts
- │   ├── app.routes.ts
- │   ├── app.config.ts
- │   ├── app.ts
- │   ├── app.html
- │   └── app.css
- ├── assets/
- ├── styles.css
- └── main.ts
 <img width="1902" height="875" alt="Screenshot 2026-01-20 201618" src="https://github.com/user-attachments/assets/19de329e-3e9c-4b52-bac1-88137bb1858d" />
 <img width="1805" height="866" alt="Screenshot 2026-01-20 201642" src="https://github.com/user-attachments/assets/956e0200-d19a-474b-ab1f-81ed03a855c4" />
 
@@ -242,6 +216,7 @@ All metrics update dynamically based on the selected property.
 <img width="1919" height="822" alt="image" src="https://github.com/user-attachments/assets/a8161142-94e2-4063-8177-17e67b67855b" />
 <img width="1917" height="780" alt="image" src="https://github.com/user-attachments/assets/59ed71ae-61e1-4ac3-bd9d-ac65948abddc" />
 <img width="1919" height="277" alt="image" src="https://github.com/user-attachments/assets/a5dccbdd-9b67-4433-aa04-e08fbcbd799e" />
+
 
 
 
