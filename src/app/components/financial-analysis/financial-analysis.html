@@ -1,0 +1,36 @@
+<div class="analysis-container">
+  <div class="analysis-grid">
+    <div class="analysis-card positive">
+      <span class="analysis-label">Total {{ analysisType === 'income' ? 'Income' : 'Expenses' }}</span>
+      <span class="analysis-value">${{ analysis.totalIncome.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</span>
+    </div>
+
+    <div class="analysis-card neutral">
+      <span class="analysis-label">Avg Transaction</span>
+      <span class="analysis-value">${{ analysis.avgTransaction.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</span>
+    </div>
+
+    <div class="analysis-card" [ngClass]="getStatusClass(analysis.netProfit)">
+      <span class="analysis-label">Net {{ analysisType === 'income' ? 'Profit' : 'Savings' }}</span>
+      <span class="analysis-value">
+        {{ analysis.netProfit > 0 ? '+' : '' }}${{ analysis.netProfit.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}
+      </span>
+    </div>
+
+    <div class="analysis-card neutral">
+      <span class="analysis-label">Total Transactions</span>
+      <span class="analysis-value">{{ analysis.transactionCount }}</span>
+    </div>
+
+    <div class="analysis-card neutral">
+      <span class="analysis-label">Top Category</span>
+      <span class="analysis-value">{{ analysis.topCategory.name }}</span>
+      <span class="analysis-subtext">${{ analysis.topCategory.amount.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</span>
+    </div>
+
+    <div class="analysis-card" [ngClass]="getStatusClass(analysis.profitMargin)">
+      <span class="analysis-label">{{ analysisType === 'income' ? 'Profit Margin' : 'Expense Ratio' }}</span>
+      <span class="analysis-value">{{ analysis.profitMargin.toFixed(1) }}%</span>
+    </div>
+  </div>
+</div>

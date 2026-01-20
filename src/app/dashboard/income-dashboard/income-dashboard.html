@@ -1,0 +1,93 @@
+<div class="income-dashboard">
+  <div class="dashboard-header">
+    <h1>💰 Income Dashboard</h1>
+
+    <div class="header-actions">
+      <div class="property-selector">
+        <label>Select Property:</label>
+        <select [(ngModel)]="selectedProperty" (change)="selectProperty(selectedProperty)" class="property-select">
+          <option *ngFor="let property of properties" [value]="property">
+            {{ property }}
+          </option>
+        </select>
+      </div>
+      <button class="download-btn" (click)="downloadReport()">📥 Download Report</button>
+    </div>
+  </div>
+
+  <app-add-transaction
+    [transactionType]="'income'"
+    [properties]="properties"
+    (transactionAdded)="onTransactionAdded($event)"
+  ></app-add-transaction>
+
+  <app-financial-analysis
+    [transactions]="allTransactions"
+    [analysisType]="'income'"
+  ></app-financial-analysis>
+
+  <div class="summary-cards">
+    <div class="card total-income">
+      <h3>Total Income</h3>
+      <p class="amount">${{ totalIncome.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</p>
+    </div>
+
+    <div class="card transaction-count">
+      <h3>Transactions</h3>
+      <p class="count">{{ incomeTransactions.length }}</p>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="section chart-section">
+      <app-dashboard-chart
+        [chartType]="'pie'"
+        [data]="transactionsByCategory"
+        [title]="'Income Distribution by Category'"
+        [chartColor]="'green'"
+      ></app-dashboard-chart>
+    </div>
+
+    <div class="section">
+      <h2>Income by Category</h2>
+      <div class="category-breakdown">
+        <div *ngIf="Object.keys(transactionsByCategory).length > 0; else noCategories" class="category-list">
+          <div *ngFor="let category of Object.keys(transactionsByCategory)" class="category-item">
+            <span class="category-name">{{ category }}</span>
+            <span class="category-amount">${{ transactionsByCategory[category].toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</span>
+          </div>
+        </div>
+        <ng-template #noCategories>
+          <p class="no-data">No income transactions yet</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Recent Income Transactions</h2>
+    <div *ngIf="incomeTransactions.length > 0; else noTransactions" class="transaction-list">
+      <table class="transactions-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of incomeTransactions">
+            <td>{{ formatDate(transaction.date) }}</td>
+            <td>{{ transaction.description }}</td>
+            <td><span class="category-badge">{{ transaction.category }}</span></td>
+            <td class="amount-cell">${{ transaction.amount.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #noTransactions>
+      <p class="no-data">No income transactions available</p>
+    </ng-template>
+  </div>
+</div>

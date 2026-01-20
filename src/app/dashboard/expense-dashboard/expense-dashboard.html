@@ -1,0 +1,93 @@
+<div class="expense-dashboard">
+  <div class="dashboard-header">
+    <h1>💸 Expense Dashboard</h1>
+
+    <div class="header-actions">
+      <div class="property-selector">
+        <label>Select Property:</label>
+        <select [(ngModel)]="selectedProperty" (change)="selectProperty(selectedProperty)" class="property-select">
+          <option *ngFor="let property of properties" [value]="property">
+            {{ property }}
+          </option>
+        </select>
+      </div>
+      <button class="download-btn" (click)="downloadReport()">📥 Download Report</button>
+    </div>
+  </div>
+
+  <app-add-transaction
+    [transactionType]="'expense'"
+    [properties]="properties"
+    (transactionAdded)="onTransactionAdded($event)"
+  ></app-add-transaction>
+
+  <app-financial-analysis
+    [transactions]="allTransactions"
+    [analysisType]="'expense'"
+  ></app-financial-analysis>
+
+  <div class="summary-cards">
+    <div class="card total-expense">
+      <h3>Total Expenses</h3>
+      <p class="amount">${{ totalExpense.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</p>
+    </div>
+
+    <div class="card transaction-count">
+      <h3>Transactions</h3>
+      <p class="count">{{ expenseTransactions.length }}</p>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="section chart-section">
+      <app-dashboard-chart
+        [chartType]="'pie'"
+        [data]="transactionsByCategory"
+        [title]="'Expense Distribution by Category'"
+        [chartColor]="'red'"
+      ></app-dashboard-chart>
+    </div>
+
+    <div class="section">
+      <h2>Expenses by Category</h2>
+      <div class="category-breakdown">
+        <div *ngIf="Object.keys(transactionsByCategory).length > 0; else noCategories" class="category-list">
+          <div *ngFor="let category of Object.keys(transactionsByCategory)" class="category-item">
+            <span class="category-name">{{ category }}</span>
+            <span class="category-amount">${{ transactionsByCategory[category].toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</span>
+          </div>
+        </div>
+        <ng-template #noCategories>
+          <p class="no-data">No expense transactions yet</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Recent Expense Transactions</h2>
+    <div *ngIf="expenseTransactions.length > 0; else noTransactions" class="transaction-list">
+      <table class="transactions-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of expenseTransactions">
+            <td>{{ formatDate(transaction.date) }}</td>
+            <td>{{ transaction.description }}</td>
+            <td><span class="category-badge">{{ transaction.category }}</span></td>
+            <td class="amount-cell">${{ transaction.amount.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #noTransactions>
+      <p class="no-data">No expense transactions available</p>
+    </ng-template>
+  </div>
+</div>

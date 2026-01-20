@@ -1,0 +1,112 @@
+{
+  "transactions": [
+    {
+      "id": "1",
+      "type": "income",
+      "property": "Earthy Escape",
+      "description": "Booking from June 2-5",
+      "amount": 1200,
+      "date": "2024-06-02",
+      "category": "Bookings"
+    },
+    {
+      "id": "2",
+      "type": "expense",
+      "property": "Earthy Escape",
+      "description": "Staff salary",
+      "amount": 1500,
+      "date": "2024-06-01",
+      "category": "Staff"
+    },
+    {
+      "id": "3",
+      "type": "income",
+      "property": "Earthy Escape",
+      "description": "Event hosting",
+      "amount": 800,
+      "date": "2024-06-10",
+      "category": "Events"
+    },
+    {
+      "id": "4",
+      "type": "expense",
+      "property": "Earthy Escape",
+      "description": "Utility bill",
+      "amount": 300,
+      "date": "2024-06-05",
+      "category": "Utilities"
+    },
+    {
+      "id": "5",
+      "type": "income",
+      "property": "Millennium Farm House",
+      "description": "Booking from June 8-12",
+      "amount": 1500,
+      "date": "2024-06-08",
+      "category": "Bookings"
+    },
+    {
+      "id": "6",
+      "type": "expense",
+      "property": "Millennium Farm House",
+      "description": "Maintenance repair",
+      "amount": 2000,
+      "date": "2024-06-03",
+      "category": "Maintenance"
+    },
+    {
+      "id": "7",
+      "type": "income",
+      "property": "Millennium Farm House",
+      "description": "Wedding event",
+      "amount": 2500,
+      "date": "2024-06-15",
+      "category": "Events"
+    },
+    {
+      "id": "8",
+      "type": "expense",
+      "property": "Millennium Farm House",
+      "description": "Staff salary",
+      "amount": 2000,
+      "date": "2024-06-01",
+      "category": "Staff"
+    },
+    {
+      "id": "9",
+      "type": "income",
+      "property": "Earthy Escape",
+      "description": "Booking from June 15-18",
+      "amount": 950,
+      "date": "2024-06-15",
+      "category": "Bookings"
+    },
+    {
+      "id": "10",
+      "type": "expense",
+      "property": "Earthy Escape",
+      "description": "Supplies",
+      "amount": 450,
+      "date": "2024-06-12",
+      "category": "Supplies"
+    },
+    {
+      "id": "1768917878398",
+      "date": "2026-01-20",
+      "property": "Earthy Escape",
+      "amount": 10000,
+      "description": "Need a space",
+      "category": "Catering",
+      "type": "income"
+    },
+    {
+      "id": "56b3",
+      "type": "income",
+      "property": "Earthy Escape",
+      "description": "Wedding event",
+      "amount": 1500,
+      "date": "2026-01-22",
+      "category": "Events"
+    }
+  ]
+}

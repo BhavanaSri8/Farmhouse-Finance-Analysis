@@ -1,0 +1,111 @@
+<div class="home-container">
+  <div class="welcome-section">
+    <h1>Welcome to Farmhouse Finance</h1>
+    <p>Integrated Financial Management System for XYZ Company Farm Houses</p>
+    
+    <!-- Farmhouse Comparison Section -->
+    <div class="comparison-section">
+      <h2>📊 Financial Comparison</h2>
+      <p>Overview of income, expenses, and net income for both farmhouses</p>
+      
+      <div class="comparison-grid">
+        <div *ngFor="let farmhouse of farmhouseComparison" class="comparison-card">
+          <div class="farmhouse-header">
+            <span class="farmhouse-icon">🏡</span>
+            <h3>{{ farmhouse.name }}</h3>
+          </div>
+          
+          <div class="metric">
+            <span class="metric-label">Total Income</span>
+            <span class="metric-value income-value">${{ farmhouse.totalIncome.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</span>
+          </div>
+          
+          <div class="metric">
+            <span class="metric-label">Total Expenses</span>
+            <span class="metric-value expense-value">${{ farmhouse.totalExpense.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</span>
+          </div>
+          
+          <div class="metric net-income-metric" [class.positive]="farmhouse.netIncome >= 0" [class.negative]="farmhouse.netIncome < 0">
+            <span class="metric-label">Net Income</span>
+            <span class="metric-value">${{ farmhouse.netIncome.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Total Summary -->
+      <div class="total-summary">
+        <h3>Overall Summary</h3>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <span class="summary-label">Combined Income</span>
+            <span class="summary-value">${{ totalAllIncome.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</span>
+          </div>
+          <div class="summary-card">
+            <span class="summary-label">Combined Expenses</span>
+            <span class="summary-value">${{ totalAllExpenses.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</span>
+          </div>
+          <div class="summary-card net-summary" [class.positive]="totalNetIncome >= 0" [class.negative]="totalNetIncome < 0">
+            <span class="summary-label">Total Net Income</span>
+            <span class="summary-value">${{ totalNetIncome.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quick-actions-section">
+      <h2>Quick Add Transaction</h2>
+      <p>Add a quick transaction without navigating to dashboards:</p>
+      
+      <div class="action-buttons-top">
+        <button class="action-btn income-btn" (click)="scrollToForm()">💰 Add Income</button>
+        <button class="action-btn expense-btn" (click)="scrollToForm()">💸 Add Expense</button>
+      </div>
+      
+      <div class="quick-form-grid">
+        <div class="quick-form">
+          <h3>➕ Add Income</h3>
+          <div class="form-inputs">
+            <input type="text" placeholder="Property" [(ngModel)]="quickIncome.property" class="form-input">
+            <input type="number" placeholder="Amount" [(ngModel)]="quickIncome.amount" class="form-input">
+            <input type="text" placeholder="Description" [(ngModel)]="quickIncome.description" class="form-input">
+            <select [(ngModel)]="quickIncome.category" class="form-input">
+              <option *ngFor="let cat of incomeCategories" [value]="cat">{{ cat }}</option>
+            </select>
+            <button (click)="addQuickIncome()" class="quick-btn btn-income">Add Income</button>
+          </div>
+        </div>
+
+        <div class="quick-form">
+          <h3>➖ Add Expense</h3>
+          <div class="form-inputs">
+            <input type="text" placeholder="Property" [(ngModel)]="quickExpense.property" class="form-input">
+            <input type="number" placeholder="Amount" [(ngModel)]="quickExpense.amount" class="form-input">
+            <input type="text" placeholder="Description" [(ngModel)]="quickExpense.description" class="form-input">
+            <select [(ngModel)]="quickExpense.category" class="form-input">
+              <option *ngFor="let cat of expenseCategories" [value]="cat">{{ cat }}</option>
+            </select>
+            <button (click)="addQuickExpense()" class="quick-btn btn-expense">Add Expense</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div *ngIf="successMessage" class="success-message">
+        ✅ {{ successMessage }}
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h2>Get Started</h2>
+      <p>Select a dashboard to view and manage financial data:</p>
+      <div class="button-group">
+        <a routerLink="/income" class="btn btn-primary">
+          💰 View Income Dashboard
+        </a>
+        <a routerLink="/expenses" class="btn btn-secondary">
+          💸 View Expense Dashboard
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
