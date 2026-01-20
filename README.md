@@ -159,7 +159,7 @@ The **Income Dashboard** provides a comprehensive overview of all income transac
 
 ---
 
-###**Millennium Farm House**
+### **Millennium Farm House**
 <img width="1919" height="848" alt="image" src="https://github.com/user-attachments/assets/4e674e37-ba62-4ded-bc00-2c1126f30a2d" />
 <img width="1919" height="857" alt="image" src="https://github.com/user-attachments/assets/59a579e6-b5fc-44d9-b40a-ada5f12082c6" />
 <img width="1916" height="425" alt="image" src="https://github.com/user-attachments/assets/b2c668c4-2fbe-4634-bf60-76733e72e4f3" />
@@ -238,10 +238,11 @@ All metrics update dynamically based on the selected property.
 <img width="1919" height="329" alt="image" src="https://github.com/user-attachments/assets/e3b68e36-d141-47ae-88fd-4504444741d9" />
 
 ---
-###**Millennium Farm House**
+### **Millennium Farm House**
 <img width="1919" height="822" alt="image" src="https://github.com/user-attachments/assets/a8161142-94e2-4063-8177-17e67b67855b" />
 <img width="1917" height="780" alt="image" src="https://github.com/user-attachments/assets/59ed71ae-61e1-4ac3-bd9d-ac65948abddc" />
 <img width="1919" height="277" alt="image" src="https://github.com/user-attachments/assets/a5dccbdd-9b67-4433-aa04-e08fbcbd799e" />
+
 
 
 
