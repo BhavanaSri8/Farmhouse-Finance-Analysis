@@ -78,7 +78,7 @@ Each dashboard operates independently with its own analytics.
 
 ---
 
-## 💰 Income Dashboard
+# 💰 Income Dashboard
 
 The **Income Dashboard** provides a comprehensive overview of all income transactions generated from farmhouse operations. It helps track revenue, analyze income sources, and evaluate overall financial performance.
 
@@ -127,20 +127,20 @@ The **Income Dashboard** provides a comprehensive overview of all income transac
 - Improves financial transparency
 - Useful for reporting, audits, and business planning
 
-<img width="1919" height="831" alt="image" src="https://github.com/user-attachments/assets/263c338d-e891-4fff-aafd-4aae1cfdaa78" />
-<img width="1910" height="771" alt="image" src="https://github.com/user-attachments/assets/0b6ae608-0ad6-474d-a609-541aee85314d" />
-<img width="1919" height="283" alt="image" src="https://github.com/user-attachments/assets/c34d23fc-e570-4f7a-abb8-a2ebcc5b974f" />
+<img width="1919" height="831" alt="image" src="https://github.com/user-attachments/assets/4042eb85-7b1d-4004-ad3e-5cdcea304905" />
+<img width="1919" height="818" alt="image" src="https://github.com/user-attachments/assets/654ba2e2-f4e5-40fe-9298-f6ac9f4dfda4" />
+<img width="1919" height="438" alt="image" src="https://github.com/user-attachments/assets/b7ded08b-8d2b-49a3-a695-77aa68bc428b" />
 
 ---
 
-### **Millennium Farm House**
-<img width="1919" height="848" alt="image" src="https://github.com/user-attachments/assets/4e674e37-ba62-4ded-bc00-2c1126f30a2d" />
-<img width="1919" height="857" alt="image" src="https://github.com/user-attachments/assets/59a579e6-b5fc-44d9-b40a-ada5f12082c6" />
-<img width="1916" height="425" alt="image" src="https://github.com/user-attachments/assets/b2c668c4-2fbe-4634-bf60-76733e72e4f3" />
+## **Millennium Farm House**
+<img width="1919" height="806" alt="image" src="https://github.com/user-attachments/assets/f6c6a0e0-aeef-42c6-9b29-09a2e4f93bea" />
+<img width="1906" height="778" alt="image" src="https://github.com/user-attachments/assets/2518293d-9c3f-43a4-8d3d-ac50e34e3af7" />
+<img width="1919" height="292" alt="image" src="https://github.com/user-attachments/assets/85ba8b04-8df2-4949-9abf-ccb59e7f3a15" />
 
 ---
 
-## 💸 Expenses Dashboard
+# 💸 Expenses Dashboard
 
 The **Expenses Dashboard** provides a comprehensive view of all operational expenses incurred across farmhouse properties. It helps monitor spending, analyze cost distribution, and evaluate financial efficiency for each property.
 
@@ -212,10 +212,12 @@ All metrics update dynamically based on the selected property.
 <img width="1919" height="329" alt="image" src="https://github.com/user-attachments/assets/e3b68e36-d141-47ae-88fd-4504444741d9" />
 
 ---
-### **Millennium Farm House**
+
+## **Millennium Farm House**
 <img width="1919" height="822" alt="image" src="https://github.com/user-attachments/assets/a8161142-94e2-4063-8177-17e67b67855b" />
 <img width="1917" height="780" alt="image" src="https://github.com/user-attachments/assets/59ed71ae-61e1-4ac3-bd9d-ac65948abddc" />
 <img width="1919" height="277" alt="image" src="https://github.com/user-attachments/assets/a5dccbdd-9b67-4433-aa04-e08fbcbd799e" />
+
 
 
 
