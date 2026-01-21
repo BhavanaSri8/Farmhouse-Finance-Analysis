@@ -223,6 +223,74 @@ All metrics update dynamically based on the selected property.
 <img width="1919" height="277" alt="image" src="https://github.com/user-attachments/assets/a5dccbdd-9b67-4433-aa04-e08fbcbd799e" />
 
 
+# DAY-2(Added Login page)
+## 🔐 Authentication & Login System
+
+The application includes a secure **Login Authentication module** to ensure that only authorized users can access the farmhouse financial data. All dashboards and pages are protected using route guards.
+
+---
+
+### 🔹 Login Page
+- A clean and responsive login interface for user authentication
+- Accepts **email** and **password** credentials
+- Displays validation and error messages for invalid login attempts
+- Includes demo credentials for quick testing
+
+**Demo Credentials:**
+- **Email:** `admin@farmhouse.com`
+- **Password:** `admin123`
+
+---
+
+### 🔹 Authentication Logic
+- Authentication is handled using a dedicated `AuthService`
+- On successful login:
+  - User session is stored in `localStorage`
+  - User is redirected to the **Home page**
+- On logout:
+  - Session data is cleared
+  - User is redirected back to the **Login page**
+
+---
+
+### 🔹 Route Protection (Auth Guard)
+- An `AuthGuard` is implemented to protect sensitive routes:
+  - Home
+  - Income Dashboard
+  - Expense Dashboard
+- Unauthorized users are automatically redirected to the Login page
+- Direct URL access to protected routes is blocked without authentication
+
+---
+
+### 🔹 Global Navigation Control
+- The navigation bar is displayed **only after successful login**
+- Navbar is hidden on the Login page
+- Logout button is available globally for secure session termination
+
+---
+
+### 🔹 Security Highlights
+- Prevents unauthorized access to financial data
+- Ensures session-based navigation control
+- Clears authentication state on logout
+- Supports page refresh while maintaining login state
+
+---
+
+### 🔹 Benefits
+- Enhances application security
+- Improves user experience
+- Prevents accidental data exposure
+- Aligns with real-world authentication practices
+
+---
+
+<img width="1919" height="845" alt="Screenshot 2026-01-21 154628" src="https://github.com/user-attachments/assets/b51fdd8d-c55a-49aa-83e8-091a9dc2cf3c" />
+
+---
+---
+<img width="1913" height="785" alt="image" src="https://github.com/user-attachments/assets/8b13019c-f86d-4f88-9520-f9a9cde2f865" />
 
 
 
